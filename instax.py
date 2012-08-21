@@ -20,8 +20,8 @@ class Instax(Polaroid):
             return
         statsd.incr("celery.tasks.total", state.task_count)
         statsd.incr("celery.workers.total", len(state.workers))
-        statsd.incr("celery.workers.alive.count",
+        statsd.gauge("celery.workers.alive.count",
             sum(1 for _, worker in state.workers.items() if worker.alive))
-        statsd.incr("celery.workers.dead.count",
+        statsd.gauge("celery.workers.dead.count",
             sum(1 for _, worker in state.workers.items() if not worker.alive))
         map(self.handle_task, state.tasks.items())
