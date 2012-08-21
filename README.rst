@@ -1,7 +1,7 @@
 Instax
 ======
 
-Making celery monitoring easier.
+Making celery monitoring easier, using statsd.
 
 Usage
 -----
