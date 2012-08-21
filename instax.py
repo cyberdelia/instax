@@ -8,7 +8,7 @@ class Instax(Polaroid):
     clear_after = True
 
     def handle_task(self, (uuid, task), worker=None):
-        name, state, runtime = task.name.lower(), task.state.lower()
+        name, state = task.name.lower(), task.state.lower()
         statsd.incr("celery.tasks.{0}.{1}".format(name, state), 1)
         if task.runtime:
             statsd.timing("celery.tasks.{0}.timer".format(name),
