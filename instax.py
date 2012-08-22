@@ -19,7 +19,7 @@ class Instax(Polaroid):
             # No new events since last snapshot.
             return
         statsd.incr("celery.tasks.total", state.task_count)
-        statsd.incr("celery.workers.total", len(state.workers))
+        statsd.gauge("celery.workers.total", len(state.workers))
         statsd.gauge("celery.workers.alive.count",
             sum(1 for _, worker in state.workers.items() if worker.alive))
         statsd.gauge("celery.workers.dead.count",
