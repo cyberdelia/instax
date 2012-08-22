@@ -6,7 +6,7 @@ with open('LICENSE') as f:
 
 setup(
     name='instax',
-    version='0.1.3',
+    version='0.1.4',
     description='Making celery monitoring easier.',
     author='Timothee Peignier',
     author_email='timothee.peignier@tryphon.org',
