@@ -11,7 +11,7 @@ class Instax(Polaroid):
         name, state = task.name.lower(), task.state.lower()
         statsd.incr("celery.tasks.{0}.{1}".format(name, state), 1)
         if task.runtime:
-            statsd.timing("celery.tasks.{0}.timer".format(name),
+            statsd.timing("celery.tasks.{0}".format(name),
                 task.runtime * 1000)
 
     def on_shutter(self, state):
