@@ -17,3 +17,4 @@ Then run ``instax`` with the following arguments ::
 
     celery events -c instax.Instax --frequency=10.0
 
+Frequency in the number of seconds that elapse between two data gatherings.
