@@ -12,7 +12,7 @@ setup(
     author_email='timothee.peignier@tryphon.org',
     url='https://github.com/cyberdelia/instax',
     license=license,
-    packages=find_packages(exclude=('tests', 'docs')),
+    py_modules=['instax'],
     install_requires=[
         "statsd>=0.5.1"
     ]
